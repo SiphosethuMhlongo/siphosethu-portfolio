@@ -162,6 +162,19 @@ nav {
   text-align: center;
 }
 
+.hero-photo {
+  margin-bottom: 1.75rem;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px rgba(110,231,183,0.35);
+}
+
 .hero-name {
   font-family: var(--serif);
   font-size: clamp(2.4rem, 6vw, 4.4rem);
@@ -256,7 +269,14 @@ section {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: stretch;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .about-text p {
@@ -264,6 +284,10 @@ section {
   margin-bottom: 1.4rem;
   font-size: 0.98rem;
   line-height: 1.9;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
 .education-side {
@@ -291,11 +315,12 @@ section {
   line-height: 1.65;
 }
 
-.edu-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 0.3rem;
+.edu-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 0.85rem;
+  display: block;
+  border: 1px solid var(--border);
 }
 
 .mini-box {
@@ -331,11 +356,6 @@ section {
   }
 }
 
-@media (max-width: 768px) {
-  .edu-bottom {
-    grid-template-columns: 1fr;
-  }
-}
 /* PROJECTS */
 .projects-grid {
   display: grid;
@@ -383,6 +403,20 @@ section {
   inset: 0;
   background: radial-gradient(ellipse at center, rgba(110,231,183,0.05) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.project-visual.no-image {
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.visual-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
 }
 
 .project-image {
@@ -604,6 +638,37 @@ section {
   border: 1px solid var(--border);
 }
 
+/* CERTIFICATIONS */
+.cert-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110,231,183,0.3);
+}
+
+.cert-card .skill-card-title {
+  margin-bottom: 0;
+}
+
+.cert-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.cert-card .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* CONTACT */
 .contact-grid {
   display: grid;
@@ -811,8 +876,7 @@ footer {
   .skills-layout,
   .about-grid,
   .contact-grid,
-  .form-row,
-  .edu-bottom {
+  .form-row {
     grid-template-columns: 1fr;
   }
 
