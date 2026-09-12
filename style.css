@@ -315,14 +315,6 @@ section {
   line-height: 1.65;
 }
 
-.edu-photo {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 0.85rem;
-  display: block;
-  border: 1px solid var(--border);
-}
-
 .mini-box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -354,6 +346,67 @@ section {
   .about-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* EXPERIENCE */
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.exp-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.exp-block:hover {
+  border-color: rgba(110,231,183,0.2);
+  transform: translateY(-2px);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.exp-header h4 {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.exp-dates {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.exp-company {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+.exp-points {
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-points li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 /* PROJECTS */
@@ -839,6 +892,7 @@ footer {
 
   .skills-layout,
   .about-grid,
+  .experience-list,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -875,6 +929,7 @@ footer {
   .projects-grid,
   .skills-layout,
   .about-grid,
+  .experience-list,
   .contact-grid,
   .form-row {
     grid-template-columns: 1fr;
